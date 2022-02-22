@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Realitzar un programa on se li mostraran 4 opcions a l’usuari per pantalla:
+
+            1.- Quadrat
+            
+            2.- Triangle
+            
+            3.- Rectangle
+            
+            4.- Cercle
+            
+            Segons l’opció escollida haurà d’introduir unes dades o altres perquè el programa 
+            mostri per pantalla l’àrea del polígon escollit.</p>
+        
+       
+        <script>
+            poligon = prompt("Tria entre: quadrat, triangle, rectangle, cercle");
+            
+            function dades() {
+                switch (poligon) {
+                    case quadrat:
+                        dadesQuadrat()
+                        areaQuadrat()
+                        break;
+
+                    case triangle:
+                        dadesTriangle()
+                        areaTriangle()
+                        break;
+
+                    case rectangle:
+                        dadesRectangle()
+                        areaRectangle()
+                        break;
+
+                    case cercle:
+                        dadesCercle()
+                        areaCercle()
+                        break;
+                
+                    default:
+                        break;
+                }
+            }
+
+            function dadesQuadrat() {
+                x = parseInt(prompt("Indica quant fa el costat del quadrat:"));
+            }
+            function dadesTriangle() {
+                b = parseInt(prompt("Indica quant fa la base del triangle:"));
+                h = parseInt(prompt("Indica quant fa l'alçada del triangle:"));
+            }
+            function dadesRectangle() {
+                x = parseInt(prompt("Indica quant fa l'amplada:"));
+                y = parseInt(prompt("Indica quant fa l'alçada:"));
+            }
+            function dadesCercle() {
+                r = parseInt(prompt("Indica el radi del cercle:"));
+            }
+
+            function areaQuadrat() {
+                Math.pow()
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Comprovar si una frase introduïda per l’usuari està formada només per minúscules, 
+            només per majúscules o per minúscules i majúscules</p>
+        <input type="text" id="frase" placeholder="Escriu una frase:">
+        <input type="button" onclick="comprovarFrase()" value="comprovar">
+    </body>
+    <script>
+        function comprovarFrase() {
+            let frase = document.getElementById("frase").value;
+            let fraseMaj = frase.toUpperCase();
+            let fraseMin = frase.toLowerCase();
+            if (fraseMaj == frase) {
+                return console.log("Frase escrita en majúscules.");
+            } else if (fraseMin == frase) {
+                return console.log("Frase escrita en minúscules.");
+            } else {
+                return console.log("Frase escrita en majúscules i minúscules.");
+            }
+        }
+    </script>
+</html>

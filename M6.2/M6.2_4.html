@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Realitzar un programa on l’usuari introdueix un número i el programa li retorna el factorial 
+            del número introduit</p>
+        <input type="text" id="num" placeholder="Introdueix un nombre"> <br>
+        <input type="button" onclick="myFunction()" value="calcular factorial">
+        <p id="resultat"></p>
+        
+        <script>
+            function myFunction() {
+                let num = parseInt(document.getElementById("num").value);
+                document.getElementById("resultat").innerHTML = factorial(num);
+            }
+            function factorial(x) {
+                let i = 0;
+                let f = 1;
+                for (i = 1; i <= x; i++) {
+                    f = f * i;
+                }
+                return f
+            }
+        </script>
+    </body>
+</html>

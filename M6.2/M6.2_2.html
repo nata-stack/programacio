@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Un professor vol calcular les mitges de les notes de tota la classe. Crea una aplicació 
+            on l’usuari introduirà un número per pantalla (el número correspon al número de notes que 
+            vol introduir) i el programa li demanarà que inclueixi les notes de tots els alumnes. 
+            Un cop les notes han sigut introduides, el programa retorna el següent: Si la nota mitja 
+            es menor que 5: “La nota media de la clase es de suspenso. Los alumnos deberían preguntar 
+            sus dudas y trabajar más por su cuenta". Si la nota es inferior a 7: "La nota media de la 
+            clase es buena pero los alumnos deberían mejorar el trabajo personal". 
+            Para el resto de casos, el mensaje debería ser: "Enhorabuena! La nota media de la clase 
+            se corresponde con el esfuerzo que habéis realizado";</p>
+            <input type="text" id="numN" placeholder="Introdueix quants alumnes tens">
+            <input type="button" onclick="introNotes()" value="ok">
+            <P id="resultat"></P>
+            <p id="valoracio"></p>
+
+            <script>
+                function introNotes(){
+                    let n = parseInt(document.getElementById("numN").value);
+                    let i = 0;
+                    let notes = [];
+                    let resultat = 0;
+                    let valoracio = "";
+                    for (i = 0; i < n; i++) {   //prompts per recollir les notes
+                        notes.push (parseInt(prompt()));
+                    }
+                    resultat = mitja(notes);
+                    document.getElementById("resultat").innerHTML = "Nota mitja: " + resultat;
+
+                    if (resultat > 7) {
+                        valoracio = "Enhorabuena! La nota media de la clase se corresponde con el esfuerzo que habéis realizado";
+                    } else if (resultat >= 5) {
+                        valoracio = "La nota media de la clase es buena pero los alumnos deberían mejorar el trabajo personal";
+                    } else {
+                        valoracio = "La nota media de la clase es de suspenso. Los alumnos deberían preguntar sus dudas y trabajar más por su cuenta";
+                    }
+                    document.getElementById("valoracio").innerHTML = valoracio;
+                }
+                function mitja(x){  //el paràmetre d'aquesta funció és un array. La funció retorna la mitjana d'un array de números.
+                    let i = 0;
+                    let suma = 0;
+                    let mitja = 0;
+                    for (i = 0; i < x.length; i++) {
+                        suma = suma + x[i];
+                    }
+                    mitja = suma / x.length;
+                        return mitja;
+                }
+            </script>
+    </body>
+</html>

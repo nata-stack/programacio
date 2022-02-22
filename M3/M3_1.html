@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lloguer de cotxes</title>
+        <body>
+            <h3>Quantes portes vols que tingui el cotxe?</h3>
+
+            <input type="text" id="caixaDeText" placeholder="nº de portes"/>
+            <input type="button" onclick="myFunction()" value="Llogar cotxe" />
+            
+            <script>
+                function myFunction(){
+                    var numPortes = document.getElementById("caixaDeText").value;
+                    if (numPortes == 3) {
+                        console.log("És un cotxe esportiu");
+                    } else if (numPortes == 5) {
+                        console.log("És un cotxe familiar");
+                    } else { 
+                        console.log("Segur que el cotxe té " + numPortes + " portes?");
+                    }
+                }
+            </script>
+
+        </body>
+    </head>
+</html>

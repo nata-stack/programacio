@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <p>Fer un programa amb una caixa de text i un botó. 
+            L’usuari introdueix el nombre de paraules que vol introduir en el camp 
+            de text, al fer clic en el botó apareixen tants “prompts” com el nombre 
+            de paraules que ha dit l’usuari que volia introduir. Les paraules es 
+            guarden en un array i un cop han sigut totes introduïdes, es mostren per 
+            pantalla.</p>
+
+        <input type="text" id="numP" placeholder="Numero de paraules">
+        <input type="button" onclick="myFunction()" value="D'acord">
+
+        <script>
+            function myFunction() {
+                let numParaules = parseInt(document.getElementById("numP").value);
+                let i; 
+                let paraules = [];
+                
+                for (i = 0; i < numParaules; i++) {
+                    paraules.push (prompt());
+                }
+
+                document.getElementById("imp").innerHTML = paraules;
+                 
+            }
+        </script>
+
+        <p id="imp"></p>
+
+    </body>
+</html>

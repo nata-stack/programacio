@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sistema educatiu</title>
+        <body>
+            <h3>Quants anys tens?</h3>
+
+            <input type="text" id="caixaText" placeholder="edat"/>
+            <input type="button" onclick="myFunction()" value="ok" />
+            
+            
+            <script>
+                function myFunction(){
+                    
+                    var edat = document.getElementById("caixaText").value;
+                
+                    if (edat >= 18) {
+                        console.log("Vas a FP o a la universitat");
+                        } else if (edat >= 16) {
+                        console.log("Vas a batxillerat");
+                        } else if (edat >= 12) {
+                        console.log("Vas a la ESO");
+                        } else if (edat >= 6) {
+                        console.log("Vas a primària");
+                        } else {
+                        console.log("Vas a preescolar");
+                    }
+                }
+            </script>
+
+        </body>
+    </head>
+</html>

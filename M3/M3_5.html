@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operacions</title>
+    </head>
+    <body>
+        <p>Fer un programa que demani dos números i un operador. 
+            Al final, el programa imprimeix per pantalla el resultat de fer 
+            l’operació que contingui la variable operador.</p>
+
+        <script>
+
+            let x = parseInt(prompt("Tria un número"));
+            let y = parseInt(prompt("Tria un altre número"));
+            let operador= prompt("Tria operació: suma (+), resta (-), multiplicació (*) o divisió (/)");
+
+            let resultat;
+
+            switch (operador) {
+                    case "+":
+                        resultat = x + y; 
+                        break;
+                    case "-":
+                        resultat = x - y; 
+                        break;
+                    case "*":
+                        resultat = x * y; 
+                        break;
+                    case "/":
+                        resultat = x / y; 
+                        break;
+                    default:
+                        resultat = "Introdueix números o un operador vàlid";
+                }
+                
+                console.log(resultat); 
+
+            
+
+        </script>
+
+
+
+    </body>
+</html>

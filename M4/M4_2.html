@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Modificar el programa 5. En aquest programa, l’usuari introdueix una caixa de text amb el nombre 
+            d’alumnes a matricular i fa clic en un botó, llavors apareixen “prompts” per demanar el nom, 
+            l’edat, si l’alumne té títol universitari i si l’alumne està a l’atur. Aquestes dades es demanen 
+            tants cops com nombre d’alumnes hagi introduït l’usuari a la caixa de text.
+
+            Els requisits per obtenir la beca són: que l’alumne sigui major d’edat i estigui en disposició 
+            d’un títol universitari, o que l’alumne estigui a l’atur. Si es compleixen les condicions, 
+            l’escola li ofereix la beca.
+            
+            Un cop l’usuari hagi acabat d’introduir les dades, el programa ha de mostrar per pantalla el nom 
+            de tots els alumnes que tenen beca.</p>
+
+        <input type="text" id="numA" placeholder="Número d'alumnes a matricular">
+        <input type="button" onclick="myFunction()" value="Ok">
+        
+        <script>
+            function myFunction() {
+                let numAlumnes = parseInt(document.getElementById("numA").value);
+                let i; 
+                let dades;
+                let becaSi = [];
+                
+                for (i = 0; i < numAlumnes; i++) {
+                    dades = [prompt("Persona" + " " + (i+1) + ". Nom:"), prompt("És major d'edat?"), 
+                    prompt("Té títol universitari?"), prompt("Està a l'atur?")];
+
+                    if ((dades[1] == "si" && dades[2] == "si") || dades[3] == "si") {
+                        becaSi.push (dades[0]);
+                    }   
+                }
+                document.getElementById("resultat").innerHTML = becaSi;
+            }
+        </script>
+
+        <p>Alumnes que tenen beca:</p>
+        <p id="resultat"></p>
+    </body>
+</html>

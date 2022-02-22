@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Fes un programa que mostri el següent per pantalla:
+
+            *
+            
+            * *
+            
+            * * *
+            
+            * * * *
+            
+            * * * * *
+            
+            * * * * * *
+            
+            El nombre de línies formades per “*” vindrà donat per un número que l’usuari introduirà 
+            en una caixa de text.
+             
+            Condició: En tot el codi del programa només hi pot haver un *</p>
+
+            <p id="resultat"></p>
+
+            <script>
+                var num = parseInt(prompt("Quantes linies vols?")); 
+               
+                    function linies(x){
+                        let i = 0;
+                        let e = 0;
+                        let text = "";
+                        for (i = 0; i <= x; i++) { //linies
+                            for (e = 0; e < i; e++) {  //estrelles
+                                text += " * " ;
+                            }
+                            text = text + "<br>" + "<br>";
+                        }
+                        return text;
+                    }
+                document.getElementById("resultat").innerHTML = linies(num);
+            </script>
+    </body>
+</html>

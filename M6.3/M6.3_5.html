@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>L’usuari ha d’introduir un DNI i el programa ha de dir si la lletra és correcte 
+            o no amb el nombre de DNI. Si la lletra no és correcta, ha de dir quina lletra 
+            és la correcta</p>
+            <input type="text" id="numDni" placeholder="Escriu el teu num de DNI">
+            <input type="text" id="lletraDni" placeholder="Escriu la lletra del DNI">
+            <input type="button" onclick="comprovarLletra()" value="comprovar">
+        <script>
+            function comprovarLletra() {
+                let nDni = parseInt(document.getElementById("numDni").value);
+                let lletra = document.getElementById("lletraDni").value;
+                let lDni = lletra.toUpperCase();
+                if (lletraDni(nDni) == lDni) {
+                    return alert("La lletra és correcta");
+                } else {
+                    return alert("La lletra no és correcta. La correcta és la " + lletraDni(nDni));
+                }
+            }
+            function lletraDni(numDni) {
+                let mod = numDni % 23;
+                let lletra = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", 
+                "Q", "V", "H", "L", "C", "K", "E"]
+                return lletra[mod];
+            }
+        </script>
+    </body>
+</html>

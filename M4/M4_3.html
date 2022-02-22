@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Aquesta línia de codi: Math.ceil((Math.random() * 10)); Retorna un número entre 
+            l’1 i el 10 de forma aleatòria.
+            
+            L’exercici consisteix a què l’usuari ha d'endevinar el número escollit 
+            aleatòriament pel programa.
+            
+            El programa, mitjançant “prompts”, anirà demanant números a l’usuari fins que 
+            aquest encerti el número escollit pel programa.
+            
+            Un cop l’usuari hagi endevinat el número, es mostrarà per pantalla el següent missatge: 
+            “Enhorabona, el número era X”</p>
+
+            <h2>Endevina el número de l'1 al 10</h2>
+            <p id="yes"></p>
+
+            <script>
+                let numero = Math.ceil((Math.random() * 10));
+                let endevina = prompt ();
+                let resposta = "Enhorabona, el número era" + " " + numero;
+               
+                while (endevina != numero) {
+                    endevina = prompt ();
+                }
+         
+                document.getElementById("yes").innerHTML = resposta;
+
+            </script>
+    </body>
+</html>

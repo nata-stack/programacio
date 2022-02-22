@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>M2 Exercici 1</title>
+   </head>
+
+    <body>
+        
+        <h1>Les meves dades: </h1>
+        <p id="dadesnom"></p>
+        <p id="dadescognom"></p>
+        <p id="dadesedat"></p>
+        
+
+
+        <script>
+           
+           ////////INPUTS
+           
+           //Prompt
+            
+            let nom = prompt("El meu nom");
+            let cognom = prompt("El meu cognom");
+            let edat = prompt("La meva edat");
+     
+
+            ///////OUTPUTS
+            
+            //Consola
+
+            console.log("Nom:" + nom);
+            console.log("Cognom:" + cognom);
+            console.log("Edat:" + edat);
+            
+            //Mostrar valors en html  getElementById()
+
+            document.getElementById("dadesnom").innerHTML = nom;
+            document.getElementById("dadescognom").innerHTML = cognom;
+            document.getElementById("dadesedat").innerHTML = edat;
+
+            //Popup
+
+            alert(nom);
+            alert(cognom);
+            alert(edat);
+
+        </script>
+    </body>
+</html>

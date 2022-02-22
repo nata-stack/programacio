@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>L’usuari ha d’introduir números fins que introdueixi un nombre primer. 
+            En el moment que l’usuari introdueixi un nombre primer, el programa ha de 
+            treure per pantalla el següent missatge: Exacte, el número “x” és primer!</p>
+        <input type="button" onclick="buscarNumPrim()" value="Buscar nombre primer">
+        <script>
+            function buscarNumPrim() {
+                do {
+                    var num = parseInt(prompt("tria un número"));
+                    prim(num);
+                    if (prim(num) == false) {
+                        var num = parseInt(prompt("tria un número"));
+                    }
+                } while(prim(num) == false);
+                return alert("Exacte, el número " + num + " és primer!");
+            }
+            function prim(n) {
+                i = 0;
+                if (n % 2 == 0) {   //descarta parells
+                    return false;
+                } else {
+                    for (i = 3; i + i <= n; i+=2) {  //descarta senars
+                        if (n % i == 0) {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+        </script>
+    </body>
+</html>

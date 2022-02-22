@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>1.    Programa amb una funció que li passem un nombre com a paràmetre i imprimeix a consola (ex num 5): 
+            -    Iniciant el compte enrere
+            -    5
+            -    4
+            -    3
+            -    2
+            -    1
+            -    0
+            -    Compte enrere acabat
+            
+            2.    Fes un programa amb 4 funcions que han de fer el següent (el programa ha de cridar a les 4 funcions):
+            a.    Funció sense paràmetres que imprimeixi per consola “soc una funció”
+            b.    Funció que rebi un array de 5 nombres com a paràmetre, retorni l’índex del nombre més gran i imprimeixi nombre en si. El programa principal també haurà d’imprimir el numero del array mitjançant el return de la funció.
+            c.    Funció que rebi un array de 5 noms com a paràmetre i retoni l’índex del nom més llarg (el programa “principal” haurà d’imprimir per consola el nom)
+            d.    Funció que rebi dos nombres i retorni un array amb tots els nombres compresos entre ells. El programa principal ha de mostrar aquest array per consola.
+        </p>
+
+        <script>
+            /*
+            1.    Programa amb una funció que li passem un nombre com a paràmetre i imprimeix a consola (ex num 5): 
+            -    Iniciant el compte enrere
+            -    5
+            -    4
+            -    3
+            -    2
+            -    1
+            -    0
+            -    Compte enrere acabat
+            */
+
+            compteEnrere(3)
+            function compteEnrere(x) {
+                console.log("Iniciant el compte enrere");
+                let i;
+                for(i = x; i > 0; i--){
+                    console.log(i);
+                }
+                console.log("Compte enrere acabat.")
+            }
+
+
+
+            
+            // a. Funció sense paràmetres que imprimeixi per consola “soc una funció”
+            
+            funcio();
+
+            function funcio(){
+                console.log("Sóc uns funció.");
+            }
+
+            
+            //b. Funció que rebi un array de 5 nombres com a paràmetre, retorni l’índex del nombre més gran i imprimeixi nombre en si. El programa principal també haurà d’imprimir el numero del array mitjançant el return de la funció.
+            
+            const arr = [5, 8, 90, 23, 12];
+            let array = [5, 8, 90, 23, 12];
+            console.log(arr[numMesGran(array)]);
+
+            function numMesGran(a){
+
+            }
+
+
+            function numMesGran(a){ //se puede hacer sin tanto lio solo comparando las posiciones viendo si la actual es mas grande y si lo es me quedo con ese index y aas ihasta el final. el valor del index dara el numero mas alto
+            let e;
+            let i;
+            for (e = 0; e < 4; e++) {  //bubble sort
+                for (i = 0; i < 5 - e - 1; i++) {
+                    if (a[i] > a[i + 1]) {
+                        temp = a[i];
+                        a[i] = a[i + 1];
+                        a[i + 1] = temp;
+                    }
+                }
+            }
+            let e2;
+            for(e2 = 0; e2 <= 4; e2++){
+                if(a[4] == arr[e2]){
+                    break;
+                }
+            }
+            console.log(a[4]); //o tb arr[e2] que seria el mateix
+            return e2;
+            }
+
+            //c. Funció que rebi un array de 5 noms com a paràmetre i retoni l’índex del nom més llarg (el programa “principal” haurà d’imprimir per consola el nom)
+            
+            const arrayNoms = ["ana", "olga", "peret", "sebastian", "pi"];
+            let array2 = ["ana", "olga", "peret", "sebastian", "pi"];
+            console.log(arrayNoms[nomMesLlarg(array2)]);
+
+            function nomMesLlarg(a) {
+                let e;
+                let i;
+                for (e = 0; e < 4; e++) {  //bubble sort
+                for (i = 0; i < 5 - e - 1; i++) {
+                    if (a[i].length > a[i + 1].length) {
+                        temp = a[i];
+                        a[i] = a[i + 1];
+                        a[i + 1] = temp;
+                    }
+                }
+            }
+            let e2;
+            for(e2 = 0; e2 <= 4; e2++){
+                if(a[4] == arrayNoms[e2]){
+                    break;
+                }
+            }
+            return e2;
+            }
+
+
+            // d. Funció que rebi dos nombres i retorni un array amb tots els nombres compresos entre ells. El programa principal ha de mostrar aquest array per consola.
+
+            console.log(nombresEntre(1, 16));
+
+            function nombresEntre(x, y){
+                let nombres = [];
+                if(x < y){
+                   let i;
+                   for(i = x + 1; i < y; i++){
+                        nombres.push(i);
+                   } 
+                }
+                if(x > y){
+                    let e;
+                    for(e = x - 1; e > y; e--){
+                        nombres.push(e);
+                    }
+                }
+                return nombres;
+            }
+
+
+        </script>
+    </body>
+</html>

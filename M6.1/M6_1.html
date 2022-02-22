@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Crea un programa que tingui dues caixes de text on l’usuari ha d'introduir dues notes 
+            i el programa ha de mostrar per pantalla la mitja de les dues notes.</p>
+        
+        <input type="text" id="nota1" placeholder="Introdueix una nota">
+        <input type="text" id="nota2" placeholder="Introdueix una altra nota">
+        <input type="button" onclick="clan()" value="ok">
+        
+        <p id="resultat"></p>
+
+        <script>
+            function clan(){
+                var n1 = parseInt(document.getElementById("nota1").value);
+                var n2 = parseInt(document.getElementById("nota2").value);
+                let r = mitja(n1, n2);
+                document.getElementById("resultat").innerHTML = r;
+            }
+            
+            function mitja(x, y){
+                return (x + y) / 2;
+            }
+            
+        </script>
+        
+    </body>
+</html>

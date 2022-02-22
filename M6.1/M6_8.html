@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Fes un programa que mostri el següent per pantalla:
+
+            *
+            
+            * *
+            
+            * * *
+            
+            * * * *
+            
+            * * * * *
+            
+            * * * * * *
+            
+            * * * * *
+            
+            * * * *
+            
+            * * *
+            
+            * *
+            
+            *
+            
+            La línea amb més “*” vindrà donada per un número que l’usuari introduirà 
+            en una caixa de text.
+            
+            Condició: En tot el codi del programa només hi pot haver-hi dos *</p>
+
+        <p id="resultat"></p>
+
+        <script>
+            var num = parseInt(prompt("Quantes estrelles vols a la linia del centre?")); 
+               
+            function linies(x){
+                let i = 0;
+                let e = 0;
+                let f = 0;
+                let text = "";
+                for (i = 1; i < x * 2; i++) {  //linies
+                    if (i <= x) {
+                        for (e = 0; e < i; e++) {   //estrelles ++
+                            text += " * " ;
+                        }  
+                    }
+                    else  {
+                        for (f = x * 2 ; f > i; f--) {  //estrelles --
+                            text += " * " ;
+                        }      
+                    }
+                    text = text + "<br>" + "<br>";
+                }
+                return text;
+            }
+            document.getElementById("resultat").innerHTML = linies(num);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>L’usuari introdueix un any i el programa diu si dia 1 de gener de l’any introduït és diumenge</p>
+        
+        <script>
+            let any = prompt("any");
+            let fecha = new Date(any, 0, 1);
+            let dia = fecha.getDay();
+            console.log(esDiumenge(dia));
+            
+            function esDiumenge(dia) {
+                if (dia == 0) {
+                    return "Es diumenge.";
+                } else {
+                    return "No és diumenge.";
+                }
+            }
+            
+        </script>
+    </body>
+</html>

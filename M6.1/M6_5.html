@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Taula de multiplicar. L’usuari introduirà un número per pantalla i el programa 
+            li mostrarà la taula de multiplicar d’aquell número.</p>
+        <p id="resposta"></p>
+        
+        <script>
+            var num = parseInt(prompt("Recollint un valor")); 
+            //let r = taula(num);  //crida a la funció, però en realitat no cal pq la crido al imprimir 
+            function taula(x){
+                let i = 0;
+                let text = "";
+                for (i = 0; i <= 10; i++) {
+                   text += x + " x " + i + " = " + i * x + "<br>";  
+                }
+                return text;
+            }
+            document.getElementById("resposta").innerHTML = taula(num);
+        </script>
+    </body>
+</html>

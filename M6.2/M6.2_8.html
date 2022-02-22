@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Crea un programa on l’usuari introdueixi una temperatura en ºC i es mostri per pantalla 
+            la conversió en ºFahrenheit</p>
+        <p>Introdueix temperatura en ºC</p>
+        <input type="text" id="temp">
+        <input type="button" onclick="conversio()" value="convertir a ºFarenheit">
+        <script>
+            function conversio() {
+                let c = parseInt(document.getElementById("temp").value);
+                alert(fahrenheit(c) + " ºF");
+            }
+            function fahrenheit(gc) {
+                let f = gc * (9/5) + 32;
+                return f;
+            }
+        </script>
+    </body>
+</html>

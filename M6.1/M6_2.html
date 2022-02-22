@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>L’usuari ha d'introduir un número en una caixa de text i el programa ha de mostrar 
+            per pantalla si el número és parell o imparell.</p>
+        <input type="text" id="num" placeholder="numero">
+        <input type="button" onclick="merda()" value="ok">
+
+        <script>
+           
+            function merda(){
+                let n = parseInt(document.getElementById("num").value);
+                alert(par(n));
+            }
+           
+            function par(x){
+            if (x % 2 == 0) {
+                return "parell";
+            }else
+                return "imparell";
+           }
+        </script>
+    </body>
+</html>

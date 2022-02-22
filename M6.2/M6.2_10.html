@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Realitzar un programa on se li mostraran 4 opcions a l’usuari per pantalla:
+
+            1.- Quadrat
+            
+            2.- Triangle
+            
+            3.- Rectangle
+            
+            4.- Cercle
+            
+            Segons l’opció escollida haurà d’introduir unes dades o altres perquè el programa 
+            mostri per pantalla l’àrea del polígon escollit.</p>
+        
+        <input type="button" onclick="dadesQuadrat()" value="Quadrat">
+        <input type="button" onclick="dadesTriangle()" value="Triangle">
+        <input type="button" onclick="dadesRectangle()" value="Rectangle">
+        <input type="button" onclick="dadesCercle()" value="Cercle">
+        <p id="area"></p>
+        <script>
+            
+            ////agafa les dades; 
+            ///crida la funció que calcula l'àrea; 
+            //crida la funció que imprimeix el resultat
+            function dadesQuadrat() {
+                let x = parseInt(prompt("Indica quant fa el costat del quadrat:"));
+                let resposta = areaQuadrat(x);
+                resultat(resposta);
+            }
+            function dadesTriangle() {
+                let b = parseInt(prompt("Indica quant fa la base del triangle:"));
+                let h = parseInt(prompt("Indica quant fa l'alçada del triangle:"));
+                let resposta = areaTriangle(b, h);
+                resultat(resposta);
+            }
+            function dadesRectangle() {
+                let x = parseInt(prompt("Indica quant fa l'amplada:"));
+                let y = parseInt(prompt("Indica quant fa l'alçada:"));
+                let resposta = areaRectangle(x, y);
+                resultat(resposta);
+            }
+            function dadesCercle() {
+                let r = parseInt(prompt("Indica el radi del cercle:"));
+                let resposta = areaCercle(r);
+                resultat(resposta);
+            }
+            
+            ///////funcions que calculen les àrees
+            function areaQuadrat(x) {
+                return x * x;
+            }
+            function areaTriangle(b, h) {
+                return (b * h) / 2;
+            }
+            function areaRectangle(x, y) {
+                return y * x;
+            }
+            function areaCercle(r) {
+                const pi = 3.1416;
+                return pi * (r*r);
+            }
+            
+            //////funció que imprimeix el resultat
+            function resultat(e) {
+                document.getElementById("area").innerHTML=e;
+            }
+        </script>
+    </body>
+</html>

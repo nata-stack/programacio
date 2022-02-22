@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signes zodiac</title>
+    </head>
+    <body>
+        <p>Fer un programa que demani a l’usuari quin dia i quin mes va néixer, 
+            amb aquesta informació el programa mostra per pantalla, de quin signe 
+            del zodíac és.</p>
+        <p id = resposta></p>
+
+        <script>
+
+            let dia = parseInt(prompt("Dia de naixement"));
+            let mes = parseInt(prompt("Mes de naixement (de l'1 al 12)"));
+            let resposta;
+
+            if (dia > 31 || mes > 12) {
+                    resposta = "Introdueix una data vàlida";
+                } else if ((dia > 20 && mes == 1) || (dia < 19 && mes == 2)) {
+                    resposta = "Acuari";
+                } else if ((dia > 20 && mes == 2) || (dia < 20 && mes == 3)) {
+                    resposta = "Piscis";  
+                } else if ((dia > 21 && mes == 3) || (dia < 20 && mes == 4)) {
+                    resposta = "Aries";
+                } else if ((dia > 21 && mes == 4) || (dia < 21 && mes == 5)) {
+                    resposta = "Tauro";
+                } else if ((dia > 22 && mes == 5) || (dia < 21 && mes == 6)) {
+                    resposta = "Géminis";
+                } else if ((dia > 24 && mes == 7) || (dia < 23 && mes == 8)) {
+                    resposta = "Leo";
+                } else if ((dia > 24 && mes == 8) || (dia < 22 && mes == 9)) {
+                    resposta = "Virgo";
+                } else if ((dia > 23 && mes == 9) || (dia < 22 && mes == 10)) {
+                    resposta = "Libra";
+                } else if ((dia > 23 && mes == 10) || (dia < 22 && mes == 11)) {
+                    resposta = "Escorpio";
+                } else if ((dia > 23 && mes == 11) || (dia < 21 && mes == 12)) {
+                    resposta = "Sagitario";
+                } else if ((dia > 22 && mes == 12) || (dia < 19 && mes == 1)) {
+                    resposta = "Capricornio";
+                } else {
+                    resposta = "Introdueix una data vàlida";
+                }
+     
+                document.getElementById("resposta").innerHTML = resposta;  
+
+                //tb se puede hacer con un swith con 12 casos con los meses y dentro de cada uno un if con los dias
+
+        </script>
+    </body>
+</html>

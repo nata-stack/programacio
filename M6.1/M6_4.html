@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Mostra per pantalla els nombres parells compresos entre el 100 
+            i el 0 en ordre descendent.</p>
+        <p id="numeros"></p>
+        
+        <script>   
+        /* Va guardant els resultats en un array i imprimeix l'array //////////////
+        let i; 
+        let num = []
+        for (i = 100; i > 0; i -= 2) {
+            num.push(i);
+            document.getElementById("numeros").innerHTML = num;
+        }
+        */
+
+
+         /////El mateix però sense l'array i imprimint directament per pantalla///////////
+          
+        let i; 
+        var text = "";
+        for (i = 100; i > 0; i -= 2) {
+            text += i + ", ";
+            document.getElementById("numeros").innerHTML = text;
+        }
+
+        ////////////////////////////////////////////////////////////
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Volem crear un programa per tal que l’usuari jugui a encertar un nº de l’1 al 100 que 
+            l’ordinador haurà “pensat” prèviament. El programa haurà de demanar un nº per teclat al 
+            jugador i haurà de mostrar, en funció del nº introduït, un dels següents missatges:
+
+            El número és inferior a "X" (X número escollit per l'usuari)
+            
+            El número és superior a "X" (X número escollit per l'usuari)
+            
+            Has encertat!
+            
+            Aquest procés s’ha de repetir fins que l’usuari encerti el nº pensat per l’ordinador.
+            
+            Ajuda: Math.ceil(Math.random() * 100);</p>
+        
+        <input type="text" id="numero" placeholder="Tria un número de l,1 al 100">
+        <input type="button" onclick="myFunction()" value="Ok">
+        <p id="missatge"></p>
+
+        <script>
+            function myFunction() {
+                let num = parseInt(document.getElementById("numero").value);
+                let num2 = generaNum();
+                document.getElementById("missatge").innerHTML = jugar(num, num2);
+            }
+            
+            function generaNum() {  ///genera num aleatori
+                return Math.ceil(Math.random() * 100)
+            }
+            
+            function jugar(x, y) {   ///valida si el num és o no és 
+                while (x != y) {
+                    x = demanaNum(x, y);  
+                }
+                let resposta = "Has encertat! El número era el " + x + ".";
+                return resposta;
+            }
+            
+            function demanaNum(x, y) {     ///demana un altre valor per a x
+                if (x > y) {
+                    x = parseInt(prompt ("El número és inferior a " + x + ". Torna-ho a intentar"));
+                } else if (x < y) {
+                    x = parseInt(prompt ("El número és superior a " + x + ". Torna-ho a intentar"));
+                } else {
+                    x = parseInt(prompt ("Introdueix un número vàlid."));  
+                }
+                return x;
+            }
+        </script>
+    </body>
+</html>

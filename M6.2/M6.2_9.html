@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>L’usuari introdueix un nombre per pantalla i el programa li ha de mostrar 
+            la successió de Fibonacci. Si l’usuari introdueix el 10 el resultat ha de ser:
+            0,1,1,2,3,5,8,13,21,34</p>
+        <script>
+            let num = parseInt(prompt(""));
+            alert(fibonacci(num))
+            
+            function fibonacci(quant) {
+                let i;
+                let sFibo = [0, 1];
+                for (i = 1; i <= quant - 2; i++) {
+                    let suma = sFibo[i - 1] + sFibo[i];
+                    sFibo.push(suma);
+                }
+                return sFibo;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>En aquest programa l’usuari ha d’introduir un string i el programa ha de mostrar l’string al revés</p>
+        <p id="missatge"></p>
+
+        <script>
+            let frase = prompt("introdueix una frase");
+            document.getElementById("missatge").innerHTML = alReves(frase);
+            
+            function alReves(x) { //entenem l'string com un array
+                let i;
+                text = "";
+                for (i = (x.length - 1); i >= 0; i--) {
+                    text = text + x[i];
+                }
+                return text;
+            }
+            
+        </script>
+    </body>
+</html>

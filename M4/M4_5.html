@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Modificar el programa 10. Ara el programa només ha de poder donar 5 beques. 
+            El programa anirà demanant les dades dels alumnes fins que es donin aquestes 5 beques. 
+            Un cop el programa hagi assignat les 5 beques s’ha de mostrar per pantalla els noms dels 
+            5 alumnes que tenen beca.</p>
+
+        <p>Alumnes que tenen beca:</p>
+        <p id="resultat"></p>
+
+            <script>
+                let i = 0; 
+                let dades = [];
+                let becaSi = [];
+                
+                do {
+                    dades = [prompt("Persona" + " " + (i+1) + ". Nom:"), prompt("És major d'edat?"), 
+                    prompt("Té títol universitari?"), prompt("Està a l'atur?")];
+                    i++; 
+                    
+                    if ((dades[1] == "si" && dades[2] == "si") || dades[3] == "si") {
+                        becaSi.push (dades[0]);
+                    }   
+                }
+                while (becaSi.length < 5);
+
+                document.getElementById("resultat").innerHTML = becaSi;
+            </script>
+    </body>
+</html>

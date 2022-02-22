@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Modificar el programa 11. En aquest cas, a més, s’estableix un número màxim de 5 intents. 
+            Si l’usuari encerta el número escollit pel programa en aquests 5 intents, el programa 
+            mostra el següent missatge per pantalla: “Enhorabona, el número és X i has necessitat Y 
+            intents per encertar-lo”. Si no encerta el número amb els 5 intents, el programa mostra 
+            per pentalla: "Has utilitzat massa intents! El número és X ".</p>
+
+            <h2>Endevina el número de l'1 al 10</h2>
+            <p id="yes"></p>
+
+            <script>
+                let numero = Math.ceil((Math.random() * 10));
+                let intents = 0;
+                let endevina;
+                // el profe ha fet una variable const max_intents = 5; i la fa servir directament
+                do {
+                    endevina = prompt ();
+                    intents++;
+                } while ((endevina != numero) && (intents < 5));
+
+                
+                let enhorabona = "Enhorabona, el número era" + " " + numero + " " + "i has necessitat" + " " + intents + " " + "intents per encertar-lo.";
+                let mal = "Has utilitzat massa intents! El número és" + " " + numero;
+
+                if (endevina == numero) {                
+                    document.getElementById("yes").innerHTML = enhorabona;
+                 } else {
+                    document.getElementById("yes").innerHTML = mal;
+                 }
+            </script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Crea un programa on l’usuari introdueixi tres notes en tres caixes de text 
+            i el programa calculi la mitja. Si la mitja és inferior a 5 ha de mostrar el 
+            següent missatge per pantalla: “No has superat el curs. Has de recuperar”, 
+            si la mitja està entre 5 i 7 ha de mostrar: “Enhorabona! Has aprovat però hauries 
+            de seguir practicant”, si la mitja és superior a 7 ha de mostrar: ”Enhorabona! 
+            Has superat el curs! Passa ja al següent nivell!</p>
+            <input type="text" id="nota1" placeholder="Nota 1"> <br>
+            <input type="text" id="nota2" placeholder="Nota 2"> <br>
+            <input type="text" id="nota3" placeholder="Nota 3"> <br>
+            <input type="button" onclick = "crida()" value="Fer mitja">
+            <p id="resultat"></p>
+            <script>  
+                function crida(){
+                    var n1 = parseInt(document.getElementById("nota1").value);
+                    var n2 = parseInt(document.getElementById("nota2").value);
+                    var n3 = parseInt(document.getElementById("nota3").value);
+                    var resposta = "";
+                        
+                    if (mitja(n1, n2, n3) >= 7) {
+                        resposta = "Enhorabona! Has superat el curs! Passa ja al següent nivell!";
+                    } else if (mitja(n1, n2, n3) >= 5) {
+                        resposta = "Enhorabona! Has aprovat però hauries de seguir practicant";
+                    } else {
+                        resposta = "No has superat el curs. Has de recuperar";
+                    }
+
+                    document.getElementById("resultat").innerHTML = resposta;
+                }
+                function mitja(x, y, z) {
+                    return (x + y + z) / 3;
+                }
+            </script>
+    </body>
+</html>

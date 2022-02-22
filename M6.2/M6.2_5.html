@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>L’usuari introdueix un nombre per pantalla i el programa imprimeix per pantalla 
+            si el nombre és primer o no</p>
+        <p id="resultat"></p>
+        <script>
+            let num = parseInt(prompt("Introdueix un nombre"));
+            document.getElementById("resultat").innerHTML = prim(num);
+            
+            function prim(n) {
+                i = 0;
+                if (n % 2 == 0) {   //descarta parells
+                    return "no primer";
+                } else {
+                    for (i = 3; i + i <= n; i+=2) {  //descarta senars
+                        if (n % i == 0) {
+                            return "no primer";
+                        }
+                    }
+                }
+                return "primer";
+            }
+        </script>
+    </body>
+</html>

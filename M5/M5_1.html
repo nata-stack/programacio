@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Calculadora arcaica. 
+            El programa demana a l’usuari mitjançant prompts l’operació que desitja realitzar 
+            i els números amb els quals vol operar. Cada operació (suma, resta, multiplicació, 
+            divisió i mòdul) estarà programada en una funció diferent.</p>
+        <p id="resultat"></p>
+
+        <script>
+            let n1 = parseInt(prompt("Introdueix un número"));
+            let n2 = parseInt(prompt("Un altre número"));
+            let operacio = prompt("Tria una operació: sum, rest, mult, div i mod.");
+            let resposta
+
+            switch (operacio) {
+                case "sum":
+                    resposta = sum(n1, n2)
+                    break;
+                case "rest":
+                    resposta = rest(n1, n2);
+                    break;
+                case "mult":
+                    resposta = mult(n1, n2);
+                    break;
+                case "div":
+                    resposta = div(n1, n2);
+                    break;
+                case "mod":
+                    resposta = mod(n1, n2);
+                    break;
+                default:
+                    resposta = "introdueix un operador vàlid";
+                    break;
+            }
+
+            document.getElementById("resultat").innerHTML = resposta;
+
+            function sum(x, y) {
+                return x + y;
+            }
+            function rest(x, y) {
+                return x - y;
+            }
+            function mult(x, y) {
+                return x * y;
+            }
+            function div(x, y) {
+                return x / y;
+            }
+            function mod(x, y) {
+                return x % y;
+            }
+        </script>
+    </body>
+</html>

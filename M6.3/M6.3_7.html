@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Un grup d’amics ha quedat per fer una fideuà, els ingredients principals seran: fideus, gambes, i calamars. Saben que per cada quatre persones han d’utilitzar mig quilo de fideus, 400 grams de calamars i 200 grams de gambes. S’ha de fer un programa que demani per pantalla el preu per quilo de cada ingredient i el nombre d’amics que seran per dinar. El programa ha de calcular les quantitats necessàries de cada ingredient, el preu per persona i el preu final de la fideuà</p>
+        <input type="text" id="fideus" placeholder="Preu per kg dels fideus"> <br>
+        <input type="text" id="gambes" placeholder="Preu per kg de les gambes"> <br>
+        <input type="text" id="calamars" placeholder="Preu per kg dels calamars"> <br>
+        <input type="text" id="pax" placeholder="Nombre de comensals"> <br>
+        <input type="button" onclick="fideua()" value="Calcular">
+        <p>Quantitats necessàries de cada ingredient:</p>
+        <p id="resultat1"></p>
+        <p id="resultat2"></p>
+        <p id="resultat3"></p>
+        <p>Preu total del dinar:</p>
+        <p id="resultat4"></p>
+        <p>Preu per persona:</p>
+        <p id="resultat5"></p>
+        <script>
+            function fideua() {
+                let preuF = parseInt(document.getElementById("fideus").value);
+                let preuG = parseInt(document.getElementById("gambes").value);
+                let preuC = parseInt(document.getElementById("calamars").value);
+                let numPers = parseInt(document.getElementById("pax").value);
+                //quantitat ingredient x pax (kg)
+                const f1 = 0.125;
+                const g1 = 0.05;
+                const c1 = 0.1;
+                //guarda quantitat de cada ingredient en kg
+                let quantF = quant(f1, numPers);
+                let quantG = quant(g1, numPers);
+                let quantC = quant(c1, numPers);
+                //imprimeix quantitat de cada ingredient
+                document.getElementById("resultat1").innerHTML = quantF + " kg de fideus.";
+                document.getElementById("resultat2").innerHTML = quantG + " kg de gambes.";
+                document.getElementById("resultat3").innerHTML = quantC + " kg d calamars.";
+                //guarda preu final de c/ingredient
+                let preuFinalF = preuFinal(preuF, quantF);
+                let preuFinalG = preuFinal(preuG, quantG);
+                let preuFinalC = preuFinal(preuG, quantG);
+                let preuTotalDinar = preuDinar(preuFinalF, preuFinalG, preuFinalC); 
+                document.getElementById("resultat4").innerHTML = preuTotalDinar + " €";
+                //preu per persona
+                let preuPerPax = preuPerPersona(preuTotalDinar, numPers);
+                document.getElementById("resultat5").innerHTML = preuPerPax + " €";
+            }
+            //calcula quantitat de cada ingredient en kg
+            function quant(pesIngredient, numPers ) { 
+                return pesIngredient * numPers;
+            }
+            //calcula preu final de c/ingredient en €/kg
+            function preuFinal(preuIng, quantIng) {
+                return preuIng * quantIng;
+            }
+            function preuDinar(preuFinFideus, PreuFinGambes, preuFinCalamars) {
+                return preuFinFideus + PreuFinGambes + preuFinCalamars;
+            }
+            function preuPerPersona(preuDinar, numPers) {
+                return preuDinar / numPers;
+            }
+           // function imp(x) { //????com es fa pq no sobreimprimeixi?
+            //    document.getElementById("resultat").innerHTML = x;
+           // }
+        </script>
+    </body>
+</html>

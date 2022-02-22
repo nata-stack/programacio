@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mesos</title>
+    </head>
+    <body>
+        <h3>Tria un número de l'1 (gener) al 12 (desembre) per saber quants dies té el mes</h3>
+        
+        <input type="text" id = "caixaText" placeholder="escriu un número de l'1 al 12">
+        <input type="button" onclick="myFunction()" value="consultar">
+
+        <p id="resposta"></p>
+    
+        
+        <script>
+            function myFunction(){
+
+                let numMes = parseInt(document.getElementById("caixaText").value);
+                let resposta;
+
+                switch (numMes) {
+                    case 1:
+                        resposta = "gener té 31 dies";
+                        break;
+                    case 2:
+                        resposta = "febrer té 28 o 29 dies";
+                        break;
+                    case 3:
+                        resposta = "març té 31 dies";
+                        break;
+                    case 4:
+                        resposta = "abril té 30 dies";
+                        break;
+                    case 5:
+                        resposta = "maig té 31 dies";
+                        break;
+                    case 6:
+                        resposta = "juny té 30 dies";
+                        break;
+                    case 7:
+                        resposta = "juliol té 31 dies";
+                        break;
+                    case 8:
+                        resposta = "agost té 30 dies";
+                        break;
+                    case 9:
+                        resposta = "setembre";
+                        break;
+                    case 10:
+                        resposta = "octubre";
+                        break;
+                    case 11:
+                        resposta = "novembre";
+                        break;
+                    case 12:
+                        resposta = "desembre";
+                        break;
+                    default:
+                        resposta = "algo ha fallado";
+                         
+
+                }
+
+                document.getElementById("resposta").innerHTML = resposta;
+         
+            }
+
+        </script>
+    </body>
+</html>

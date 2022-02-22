@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>L’usuari ha d’introduir una frase i el programa ha de dir si la 
+            frase és un palíndrom</p>
+    </body>
+    <script>
+        //per a que funcioni s'ha d'escriure la frase sense espais!!!
+        let frase = prompt("Escriu aquí (sense espais):");
+        alert(palindrom(frase));
+        
+        function palindrom(x) {
+            let n = x.length - 1;
+            let a = x[0];
+            let b = x[n];
+            let i;
+            for (i = 0; i < n/2; i++) {
+                a = x[i];
+                b = x[n-i];
+                if (a != b) {
+                    return "no és palíndrom";
+                }
+            }
+            return "és un palíndrom";
+        }
+    </script>
+</html>
